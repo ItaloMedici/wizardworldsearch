@@ -1,7 +1,10 @@
 export default {
   colors: {
     background: "#10141b",
-    surface800: "#242633",
+    surface900: "#242633",
+    surface800: "#30343b",
+    surface700: "#4e525a",
+    surface600: "#5a5f69",
 
     gryffindor: "#732D2D",
     slytherin: "#094036",
