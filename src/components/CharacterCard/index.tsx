@@ -1,14 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ImageBackground, Text, View } from 'react-native';
 import { Character } from '../../model/Character';
 
-import { Container } from './styles';
+import { Container, Detail, Info, Image, Name, Divider } from './styles';
 
 const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
   return (
-    <View>
-      <Text>{character.name}</Text>
-    </View>
+    <Container>
+      <Image source={{ uri: character.image }} resizeMode="cover" />
+      <Detail house={character.house} >
+        <Name>{character.name}</Name>
+        <Info>{character.house}</Info>
+      </Detail>
+    </Container>
+
   );
 }
 
