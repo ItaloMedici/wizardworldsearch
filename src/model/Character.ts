@@ -1,9 +1,11 @@
+import { HouseType } from "./House"
+
 export interface Character {
   name: string,
   alternate_names: [],
   species: any,
   gender: "male" | "female" | undefined,
-  house: "Gryffindor" | "Slytherin" | "HufflePuff" | "Ravenclaw",
+  house: HouseType | undefined,
   dateOfBirth: Date,
   yearOfBirth: number,
   wizard: boolean,
