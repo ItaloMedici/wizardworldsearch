@@ -4,10 +4,14 @@ import { Character } from '../../model/Character';
 
 import { Container, Detail, Info, Image, Name, Divider } from './styles';
 
+import notFound from "../../assets/not-found.png";
+
 const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
+  let image = character.image ? { uri: character.image } : notFound
+
   return (
     <Container>
-      <Image source={{ uri: character.image }} resizeMode="cover" />
+      <Image source={image} resizeMode="cover" />
       <Detail house={character.house} >
         <Name>{character.name}</Name>
         <Info>{character.house}</Info>
