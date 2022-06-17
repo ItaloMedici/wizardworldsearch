@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { HouseEnum } from "../../model/House";
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   width: 45%;
   height: 250px;
   margin: 10px;

@@ -10,7 +10,7 @@ const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
   let image = character.image ? { uri: character.image } : notFound
 
   return (
-    <Container>
+    <Container onPress={() => alert(character.name)}>
       <Image source={image} resizeMode="cover" />
       <Detail house={character.house} >
         <Name>{character.name}</Name>
