@@ -1,6 +1,5 @@
 import { FlatList } from "react-native";
 import styled from "styled-components/native";
-import { Character } from "../../model/Character";
 
 export const Header = styled.View`
   height: 200px;

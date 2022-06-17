@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, NativeSyntheticEvent, TextInputChangeEventData, View } from 'react-native';
+import { FlatList } from 'react-native';
 import CharacterCard from '../../components/CharacterCard';
 import SearchInput from '../../components/SearchInput';
 import { Character } from '../../model/Character';
 import { getCharacters } from '../../service/CharacterService';
 
-import { CharactersList, Container, Header, Title } from './styles';
+import { Container, Header, Title } from './styles';
 
 const Home = () => {
   const [allcharacters, setAllCharacters] = useState<Character[]>([]);
@@ -35,7 +35,7 @@ const Home = () => {
     <Container>
       <Header>
         <Title>Harry Potter's Characters!</Title>
-        <SearchInput 
+        <SearchInput
           placeholder="Insert name..."
           value={searchName}
           onChangeText={handleSearch}
@@ -44,7 +44,7 @@ const Home = () => {
       <FlatList
         numColumns={3}
         data={characters.slice(0, 52)}
-        keyExtractor={(character, i) => character.name+i}
+        keyExtractor={(character, i) => character.name + i}
         renderItem={({ item }) => <CharacterCard character={item} />}
       />
     </Container>

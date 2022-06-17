@@ -1,8 +1,7 @@
 import React from 'react';
-import { ImageBackground, Text, View } from 'react-native';
 import { Character } from '../../model/Character';
 
-import { Container, Detail, Info, Image, Name, Divider } from './styles';
+import { Container, Detail, Image, Info, Name } from './styles';
 
 import notFound from "../../assets/not-found.png";
 
