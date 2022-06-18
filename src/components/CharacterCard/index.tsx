@@ -5,11 +5,16 @@ import { Container, Detail, Image, Info, Name } from './styles';
 
 import notFound from "../../assets/not-found.png";
 
-const CharacterCard: React.FC<{ character: Character }> = ({ character }) => {
+type CharacterCardProps = {
+  character: Character,
+  onPress: (character: Character) => void
+}
+
+const CharacterCard: React.FC<CharacterCardProps> = ({ character, onPress }) => {
   let image = character.image ? { uri: character.image } : notFound
 
   return (
-    <Container onPress={() => alert(character.name)}>
+    <Container onPress={() => onPress(character)}>
       <Image source={image} resizeMode="cover" />
       <Detail house={character.house} >
         <Name>{character.name}</Name>
