@@ -27,7 +27,7 @@ const Home = () => {
     setSearchName(value)
 
     setCharacters(
-      allcharacters.filter(c => c.name.includes(value))
+      allcharacters.filter(c => c.name.toLowerCase().includes(value.toLowerCase()))
     )
   }
 
