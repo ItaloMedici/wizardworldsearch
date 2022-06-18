@@ -21,7 +21,6 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, onPress }) => 
         <Info>{character.house}</Info>
       </Detail>
     </Container>
-
   );
 }
 

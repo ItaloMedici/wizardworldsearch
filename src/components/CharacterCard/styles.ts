@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { HouseEnum } from "../../model/House";
+import { findHogwartsHouseColor } from "../../Theme/ToolTheme";
 
 export const Container = styled.TouchableOpacity`
   width: 45%;
@@ -17,16 +18,7 @@ export const Image = styled.ImageBackground`
 
 export const Detail = styled.View<{house: string | undefined}>`
   padding: 8px 10px;
-  background-color: ${({ house, theme }) => {
-      switch(house) {
-        case HouseEnum.gryffindor: return theme.colors.gryffindor
-        case HouseEnum.slytherin: return theme.colors.slytherin
-        case HouseEnum.ravenclaw: return theme.colors.ravenclaw
-        case HouseEnum.hufflePuff: return theme.colors.hufflePuff
-        default: return "black"
-      }
-    }
-  };
+  background-color: ${({ house }) => findHogwartsHouseColor(house)};
 `;
 
 export const Name = styled.Text`
