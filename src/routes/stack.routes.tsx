@@ -1,9 +1,10 @@
 import React from "react";
 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import Character from "../screens/Character";
+import CharacterScreen from "../screens/Character";
 import Home from "../screens/Home";
+import { Character } from "../model/Character";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -12,10 +13,13 @@ export const StackRoutes = () => (
     <Screen
       name="Home"
       component={Home}
+      options={{
+        headerShown: false
+      }}
     />
     <Screen
-      name="Detail"
-      component={Character}
+      name="Character"
+      component={CharacterScreen}
     />
   </Navigator>
 )
