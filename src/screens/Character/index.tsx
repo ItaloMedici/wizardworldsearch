@@ -7,7 +7,7 @@ import { Character } from '../../model/Character';
 
 const CharacterScreen: React.FC = () => {
   const route = useRoute();
-  const character = route.params as Character
+  const { character } = route.params as { character: Character }
 
   return (
     <View>

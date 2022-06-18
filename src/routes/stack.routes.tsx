@@ -20,6 +20,12 @@ export const StackRoutes = () => (
     <Screen
       name="Character"
       component={CharacterScreen}
+      options={({ route }) => ({
+        title: route.params?.chacter?.name,
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+      })}
     />
   </Navigator>
 )
