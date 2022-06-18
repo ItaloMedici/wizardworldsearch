@@ -5,6 +5,7 @@ import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navig
 import CharacterScreen from "../screens/Character";
 import Home from "../screens/Home";
 import { Character } from "../model/Character";
+import { findHogwartsHouseColor } from "../Theme/ToolTheme";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -21,9 +22,14 @@ export const StackRoutes = () => (
       name="Character"
       component={CharacterScreen}
       options={({ route }) => ({
-        title: route.params?.chacter?.name,
+        title: route.params?.character?.name,
+        headerTintColor: "#FFF",
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 20,
+        },
         headerStyle: {
-          backgroundColor: '#f4511e',
+          backgroundColor: findHogwartsHouseColor(route.params?.character?.house),
         },
       })}
     />

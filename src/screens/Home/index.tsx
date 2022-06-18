@@ -35,7 +35,7 @@ const Home: React.FC = () => {
   }
 
   const openCharacterSreen = (character: Character) => {
-    navigation.navigate('Character', character);
+    navigation.navigate('Character', { character });
   }
 
   return (
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         numColumns={3}
         data={characters.slice(0, 52)}
         keyExtractor={(character, i) => character.name + i}
-        renderItem={({ item }) => <CharacterCard character={item} onPress={openCharacterSreen}/>}
+        renderItem={({ item }) => <CharacterCard character={item} onPress={openCharacterSreen} />}
       />
     </Container>
   );

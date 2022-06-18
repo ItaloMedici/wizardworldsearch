@@ -7,7 +7,7 @@ import { Container } from './styles';
 const SearchInput: React.FC<TextInputProps> = ({ ...rest }) => {
   return (
     <Container
-      placeholderTextColor={Theme.colors.surface600}
+      placeholderTextColor={Theme.colors.surface800}
       {...rest}
     />
   );
