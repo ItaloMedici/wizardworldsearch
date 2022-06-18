@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 import CharacterCard from '../../components/CharacterCard';
@@ -7,10 +9,11 @@ import { getCharacters } from '../../service/CharacterService';
 
 import { Container, Header, Title } from './styles';
 
-const Home = () => {
+const Home: React.FC = () => {
   const [allcharacters, setAllCharacters] = useState<Character[]>([]);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [searchName, setSearchName] = useState("");
+  const navigation = useNavigation();
 
   useEffect(() => {
     getCharacters()
@@ -31,6 +34,10 @@ const Home = () => {
     )
   }
 
+  const openCharacterSreen = (character: Character) => {
+    navigation.navigate('Character', character);
+  }
+
   return (
     <Container>
       <Header>
@@ -45,7 +52,7 @@ const Home = () => {
         numColumns={3}
         data={characters.slice(0, 52)}
         keyExtractor={(character, i) => character.name + i}
-        renderItem={({ item }) => <CharacterCard character={item} />}
+        renderItem={({ item }) => <CharacterCard character={item} onPress={openCharacterSreen}/>}
       />
     </Container>
   );
